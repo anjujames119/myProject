@@ -1,0 +1,35 @@
+extends layout
+    
+   
+ 
+block content
+   
+   h1= title
+   p Welcome to #{title}
+   
+     
+
+   form(action='updateData' method='get')
+       
+     .row
+       .input-field.col.s6
+         label(for='superHero') SuperHero
+         input#first_name.validate( type='text', name='superHero')
+     .row
+       .input-field.col.s6
+         label(for='publisher') Publisher
+         input#publisher.validate( type='text', name='publisher')    
+     .row
+       .input-field.col.s6
+         label(for='alter_ego') alter_ego
+         input#alter_ego.validate( type='text', name='alter_ego')
+     .row
+       .input-field.col.s6
+         label(for='first_appearance') First Appearance
+         input#first_appearance.validate( type='text', name='first_appearance') 
+     .row
+       .input-field.col.s6
+         label(for='characters') Characters
+         input#characters.validate( type='text', name='characters')      
+     .row
+       button.btn(type='submit') Update

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  
+  
+  each val in data
+    .row
+      .col-6
+        .card.blue-grey.lighten-2.container
+            
+          .card-content.white-text.z-depth-5
+           .card-title
+            h3 #{val.superhero}
+          
+            p Real Name :#{val.alter_ego}
+            p Publisher :#{val.publisher}
+             button.btn(type='submit') 
+               a(href='/View?id='+val.id) View
+             
+             button.btn(type='submit') 
+               a(href='/Delete?id='+val.id) Delete
+               
+             button.btn(type='submit') 
+               a(href='/Update?id='+val.id) Update  
+                
+
+
+
