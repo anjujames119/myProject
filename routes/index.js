@@ -43,12 +43,19 @@ router.get('/View', function(req, res, next) {
 	.catch(console.log('ERR:: In resolving the promise')) 
 });
 
-router.get('/updateData', function(req, res, next) {
-	Heros.updateHero(req.query)
+router.get('/Update', function(req,res,next){
+	Heros.getHeroId(req.query)
 	.then(function(retVal){
-		res.render('update', { data: retVal});
-	})
-	.catch(console.log('ERR:: In resolving the promise')) 
+	res.render('update' ,{data:retVal})
+    })
+    .catch(console.log('ERR:Updating data from database'))
+});
+router.get('/updateHero', function(req,res,next){
+	Heros.update(req.query)
+	.then(function(){
+	res.redirect('/getAllHeros')
+    })
+    .catch(console.log('ERR:Updating data from database'))
 });
 
 
